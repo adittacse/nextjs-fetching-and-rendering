@@ -1,9 +1,12 @@
 import FoodCard from "@/components/cards/FoodCard";
 import CartItems from "@/app/foods/CartItems";
 import InputSearch from "@/components/InputSearch";
+import style from "./foods.module.css";
 
 const getFoods = async (search) => {
-    const res = await fetch(`https://taxi-kitchen-api.vercel.app/api/v1/foods/random?search=${search}`);
+    const res = await fetch(`https://taxi-kitchen-api.vercel.app/api/v1/foods/random?search=${search}`, {
+        next: { revalidate: 10 }
+    });
     const data = await res.json();
     // await new Promise(resolve => setTimeout(resolve, 3000));
     return data.foods || [];
@@ -15,7 +18,7 @@ const FoodsPage = async ({ searchParams }) => {
 
     return (
         <div>
-            <h2 className="text-4xl font-bold">Total <span className="text-yellow-500">{foods.length}</span> Foods Founds</h2>
+            <h2 className={`text-4xl font-bold ${style.bgred}`}>Total <span className="text-yellow-500">{foods.length}</span> Foods Founds</h2>
 
             <div className="my-4">
                 <InputSearch />

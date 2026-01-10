@@ -1,4 +1,3 @@
-import React from "react";
 import Link from "next/dist/client/link";
 
 const FoodCard = ({ food }) => {

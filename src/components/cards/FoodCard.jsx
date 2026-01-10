@@ -1,7 +1,8 @@
 import React from "react";
+import Link from "next/dist/client/link";
 
 const FoodCard = ({ food }) => {
-    const { title, foodImg, category, price } = food;
+    const { id, title, foodImg, category, price } = food;
 
     return (
         <div className="border rounded-xl p-4 shadow hover:shadow-lg transition">
@@ -25,9 +26,9 @@ const FoodCard = ({ food }) => {
                         Add To Cart
                     </button>
 
-                    <button className="flex-1 border border-gray-300 py-2 rounded-lg hover:bg-gray-100">
+                    <Link href={`/foods/${id}`} className="flex-1 border border-gray-300 py-2 rounded-lg hover:bg-gray-100 hover:text-black text-center">
                         View Details
-                    </button>
+                    </Link>
                 </div>
             </div>
         </div>

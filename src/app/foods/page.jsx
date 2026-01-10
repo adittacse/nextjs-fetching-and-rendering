@@ -1,4 +1,3 @@
-import React from "react";
 import FoodCard from "@/components/cards/FoodCard";
 
 const getFoods = async () => {

@@ -6,9 +6,11 @@ export const metadata = {
     description: "Best fast food in your town",
 };
 
+export const dynamic = "force-dynamic";
+
 const getFeedbacks = async () => {
     const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER}/api/feedback`, {
-        cache: "force-cache",
+        // cache: "force-cache",
         next: {
             revalidate: 60,
         }

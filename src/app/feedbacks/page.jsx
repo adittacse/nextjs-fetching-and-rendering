@@ -7,7 +7,7 @@ export const metadata = {
 };
 
 const getFeedbacks = async () => {
-    const res = await fetch("http://localhost:3000/api/feedback", {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER}/api/feedback`, {
         cache: "force-cache",
         next: {
             revalidate: 60,

@@ -1,13 +1,13 @@
 import Link from "next/dist/client/link";
 import AddToCartButton from "@/components/buttons/AddToCartButton";
+import { Image } from "next/dist/client/image-component";
 
 const FoodCard = ({ food }) => {
     const { id, title, foodImg, category, price } = food;
 
     return (
         <div className="border rounded-xl p-4 shadow hover:shadow-lg transition">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={foodImg} alt={title} className="w-full h-44 object-cover rounded-lg" />
+            <Image width={300} height={150} src={foodImg} alt={title} className="w-full h-44 object-cover rounded-lg" />
 
             <div className="mt-3">
                 <h2 className="text-lg font-semibold">

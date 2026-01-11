@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { Image } from "next/dist/client/image-component";
 
 const ReviewCard = ({ review }) => {
     const { user, email, photo, rating, review: text, likes, date } = review;
@@ -17,7 +18,8 @@ const ReviewCard = ({ review }) => {
             {/* user info */}
             <div className="flex items-center gap-4">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={photo} alt={user} className="w-14 h-14 rounded-full object-cover border" />
+                {/*<img src={photo} alt={user} className="w-14 h-14 rounded-full object-cover border" />*/}
+                <Image width={56} height={56} src={photo} alt={user} className="w-14 h-14 rounded-full object-cover border" />
 
                 <div>
                     <h3 className="font-semibold text-gray-500 text-lg">{user}</h3>

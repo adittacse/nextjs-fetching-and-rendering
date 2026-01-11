@@ -12,6 +12,11 @@ const getFoods = async (search) => {
     return data.foods || [];
 }
 
+export const metadata = {
+    title: "Foods - NextJS Fetching & Rendering",
+    description: "Best fast food in your town",
+};
+
 const FoodsPage = async ({ searchParams }) => {
     const { search = "" } = await searchParams;
     const foods = await getFoods(search);

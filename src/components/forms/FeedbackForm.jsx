@@ -1,6 +1,10 @@
 "use client";
 
+import { useRouter } from "next/dist/client/components/navigation";
+
 const FeedbackForm = () => {
+    const router = useRouter();
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         const message = e.target.message.value;
@@ -16,6 +20,7 @@ const FeedbackForm = () => {
 
         if (data.insertedId) {
             alert("Feedback Created Successfully");
+            router.push("/feedbacks");
         } else {
             alert("Failed to create feedback");
         }
